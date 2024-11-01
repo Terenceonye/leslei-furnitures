@@ -1,0 +1,876 @@
+/***********************************
+
+Author: Terence Onyeweke
+email: onyeweketerence@gmail.com 
+
+************************************/
+
+/************************************************************************************
+General css starts
+**************************************************************************************/
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('Montserrat.ttf') format('truetype');
+}
+
+* {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;  
+}
+
+a {
+    text-decoration: none;
+}
+
+:root {
+    --header-bg: #E2E1DD;
+    --link-color: #424242;
+    --black-text: #000000;
+    --heading-text: #2D2D1F;
+    --secondary-bg: #F7F7F7;
+    --item-bg: #FAFAFA;
+    --dark-theme-color: #404040;
+}
+
+.containerx {
+    width: 100%; /* Full width */
+    padding-right: 15px; /* Padding on the right */
+    padding-left: 15px; /* Padding on the left */
+    margin-right: auto; 
+    margin-left: auto; 
+}
+
+@media (min-width: 576px) {
+    .containerx {
+        max-width: 540px; /* Maximum width for small devices */
+    }
+}
+
+@media (min-width: 768px) {
+    .containerx {
+        max-width: 720px; /* Maximum width for medium devices */
+    }
+}
+
+@media (min-width: 992px) {
+    .containerx {
+        max-width: 960px; /* Maximum width for large devices */
+    }
+}
+
+@media (min-width: 1200px) {
+    .containerx {
+        max-width: 1140px; /* Maximum width for extra large devices */
+    }
+}
+
+@media (min-width: 1400px) {
+    .containerx {
+        max-width: 1320px; /* Maximum width for extra extra large devices */
+    }
+}
+
+
+h1 span {
+    position: relative;
+}
+
+h1 span::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -1px; /* Adjust the distance from the text */
+    transform: translateX(-50%) scaleX(0.8) rotate(-1.6deg); /* Centers and creates a concave effect */
+    width: 80%;
+    border-bottom: 5px solid #FFD80B; 
+    border-radius: 50% 50% 0 50%; /* Adds a slight curve to the line */
+}
+
+section {
+    overflow-x: hidden;
+}
+
+a {
+    color: #2D2D1F;
+}
+
+/************************************************************************************
+General Css ends
+**************************************************************************************/
+
+
+
+
+
+/************************************************************************************
+Header css starts 
+**************************************************************************************/
+
+header {
+    background-color: var(--header-bg);
+}
+
+nav {
+    padding: 2rem 4rem;
+    display: flex;
+    justify-content: space-between;
+    column-gap: 10%;
+    
+}
+
+nav .logo {
+    max-width: 300px;
+}
+
+nav .menu {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    column-gap: 10px;
+}
+
+nav .menu .top-bar {
+    display: flex;
+    justify-content: flex-end;
+    gap: 5%;
+    padding: 0 1rem;
+
+}
+
+.top-bar a {
+    color: var(--link-color);
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.bottom-bar ul li a {
+    color: var(--black-text);
+    text-decoration: none;
+}
+
+.bottom-bar ul li a i{
+    color: var(--black-text);
+    margin-left: 8px;
+}
+
+nav .menu .bottom-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+nav .menu .bottom-bar ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+nav .menu .bottom-bar ul li {
+    list-style-type: none;
+    margin: .7rem 1.5rem;
+}
+
+.cart {
+    position: relative;
+    display: inline-block; 
+}
+
+.cart-q {
+    position: absolute;
+    top: -5px; 
+    right: -5px; 
+    padding: 2px 5px; 
+    font-size: 12px; 
+    border-radius: 50%; 
+    background-color: #FFD80B; 
+    color: #000; 
+    font-weight: bold; 
+}
+
+/************************************************************************************
+Header css ends 
+**************************************************************************************/
+
+
+/************************************************************************************
+Hero Css starts
+**************************************************************************************/
+.hero {
+    background-image: url('../img/hero-bg.png');
+    background-position: center top -10rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: scroll;
+    height: 100vh;
+    padding-top: 4rem;
+    overflow-x: hidden;
+
+    position: relative;
+    padding-bottom: 10rem;
+}
+
+.hero h1 {
+    font-size: 80px;
+    font-weight: 600;
+    line-height: 104px;
+    color: var(--heading-text);
+}
+
+@media (max-width: 1200px) {
+    .hero h1 {
+        font-size: 60px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 30px;
+    }
+}
+
+
+.hero p {
+    font-size: 2vw;
+    font-weight: 500;
+    line-height: 38.4px;
+    color: var(--heading-text);
+}
+
+.hero .explore-box {
+    text-align: center;
+}
+
+.hero .explore-box a {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 27px;
+    text-align: center;
+
+    padding: 10px 2rem;
+    background-color: #2D2D1F;
+    color: white;
+    border-radius: 6px;
+}
+
+.hero .explore-box a:hover {
+    opacity: 0.9;
+}
+
+.white-effect {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+
+/************************************************************************************
+Hero Css ends
+**************************************************************************************/
+
+
+
+/************************************************************************************
+Why choose us Css starts
+**************************************************************************************/
+
+.why-choose {
+    margin-top: 4rem;
+    background-color: white;
+
+}
+.why-choose h2 {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 29.26px;
+    text-align: left;
+    margin-bottom: 10px;
+
+}
+.why-choose p {
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 29.6px;
+    text-align: left;
+
+
+}
+
+.why-choose a {
+    color: #2D2D1F;
+}
+
+.why-choose a img {
+    display: inline-block; /* Allows transform to work on inline elements */
+    transition: transform 0.2s ease-in-out; /* Smooth transition */
+}
+
+.why-choose a:hover img {
+    transform: translateX(10px); /* Moves the image to the right */
+}
+
+
+/************************************************************************************
+Why choose us Css ends
+**************************************************************************************/
+
+
+
+
+/************************************************************************************
+Best Selling Products Css starts
+**************************************************************************************/
+
+.best-selling {
+
+    margin-top: 2rem;
+    background-color: var(--secondary-bg);
+    width: 100%; /* Full width */
+    padding-right: 15px; /* Padding on the right */
+    padding-left: 15px; /* Padding on the left */
+    margin-right: auto; 
+    margin-left: auto; 
+    margin-top: 4rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.products {
+    max-width: fit-content;
+    margin: 2rem auto;
+    background-color: #EEEEEE;
+
+    border-radius: 44px;
+    padding: 6px;
+}
+
+.products button {
+    all: unset;
+
+    color: var(--black-text);
+    background-color: #EEEEEE;
+   
+    padding: 4px 0px 0px 0px;
+    gap: 10px;
+    border-radius: 32px;
+    opacity: 0px;
+    padding: 4px 10px;
+    cursor: pointer
+
+}
+
+.products button.active {
+    background-color: white;
+}
+
+
+.product-items {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 10px;
+    margin-top: 5rem;
+}
+
+.item-card {
+    border-radius: 20px;
+    /* overflow: hidden; */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1), /* Primary shadow */
+                0 1px 4px rgba(0, 0, 0, 0.08); /* Subtle shadow for softer edges */
+    transition: box-shadow 0.3s ease, transform 0.3s ease; /* Smooth hover effect */
+
+}
+
+.item-card:hover {
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15), /* Stronger shadow on hover */
+                0 3px 6px rgba(0, 0, 0, 0.1);
+    transform: translateY(-4px); /* Lift effect on hover */
+}
+
+
+.item-img {
+    position: relative; 
+    /* display: inline-block;  */
+    /* background-color: white; */
+}
+
+.item-info {
+    background-color: white;
+    padding: 10px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.item-info .price-and-icon {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+
+.item-img img {
+    margin-top: -2.5rem;
+}
+
+.price-and-icon .plus-icon {
+    background-color: var(--heading-text);
+    padding: 8px 13px;
+    border-radius: 50px;
+    cursor: pointer;
+    color: white;
+
+    transition: transform 0.3s ease; 
+}
+
+
+/* .shadow {
+    position: absolute;
+    bottom: 0px; 
+    left: 5px; 
+    height: auto; 
+    
+    z-index: 1; 
+} */
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+.plus-icon:hover {
+    animation: spin 1s ease;
+}
+
+.item-card .item-cat {
+    color: #8D8D8D;
+    font-size: 14px;
+    margin-bottom: 0;
+}
+
+.item-card .item-name {
+    color: black;
+    font-size: 15px;
+    font-weight: 600;
+    display: inline;
+    
+}
+
+.item-card .price-and-icon .item-price {
+    margin-top: 20px;
+    font-weight: 600;
+}
+
+.view-all {
+    margin: auto;
+    text-align: center;
+    margin-top: 2.5rem;
+
+}
+
+
+.view-all a img {
+    display: inline-block; /* Allows transform to work on inline elements */
+    transition: transform 0.2s ease-in-out; /* Smooth transition */
+}
+
+.view-all a:hover img {
+    transform: translateX(10px); /* Moves the image to the right */
+}
+
+/************************************************************************************
+Best selling products css ends
+**************************************************************************************/
+
+
+/************************************************************************************
+who we are css starts
+**************************************************************************************/
+.we-are img {
+    display: inline-block;
+}
+
+.we-are .works {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.we-are .works .work-item div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.work-item:nth-child(1) {
+    width: 60%;
+}
+
+.work-item:nth-child(2) {
+    width: 77%;
+}
+
+.work-item:nth-child(3) {
+    width: 70%;
+}
+
+.work-item .hr {
+    margin-top: 0;
+    height: 3px;
+    background-color: #2D2D1F; 
+    border: none;
+}
+
+/************************************************************************************
+who we are css ends
+**************************************************************************************/
+
+
+/************************************************************************************
+cta1 (Call to action 1) css starts
+**************************************************************************************/
+
+.cta {
+    border-radius: 20px;
+    background-image: linear-gradient(89.53deg, rgba(45, 45, 31, 0.97) -0.84%, rgba(45, 45, 31, 0) 90.32%), url('../img/cta.png');
+    background-size: cover; /* Ensures the background image covers the container */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat;
+    width: 100%; /* Adjust as needed */
+
+    padding: 4rem 3rem;
+    color: white;
+}
+
+.cta a {
+    
+    color: white;
+    border: 1px solid white;
+    padding: 6px 20px;
+    border-radius: 5px;
+    transition: background .2s ease;
+}
+.cta a:hover {
+    color: #000000;
+    background-color: white;
+}
+
+/************************************************************************************
+cta1 (Call to action 1) css ends
+**************************************************************************************/
+
+
+
+/************************************************************************************
+Testimonial css starts
+**************************************************************************************/
+
+.owl-carousel .item .testi-owner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.owl-carousel .owl-item img {  /* this changes the default */
+    width: 60px;
+}
+
+.owl-carousel .item > img {
+    width: 30px;
+    height: 30px;
+
+    margin-bottom: 20px;
+}
+
+.testi-owner div p {
+    margin: 0;
+}
+
+.owl-carousel .item > p {
+    margin-bottom: 40px;
+}
+
+.testi-owner div p:nth-child(2) {
+    color:#979797;
+    font-size: 13px;
+}
+
+/************************************************************************************
+Testimonials css ends
+**************************************************************************************/
+
+
+/************************************************************************************
+cta2 (Call to action 2) css starts
+**************************************************************************************/
+
+
+.cta2-section{
+    /* border-radius: 20px; */
+    background-image: linear-gradient(89.53deg, rgba(45, 45, 31, 0.97) -0.84%, rgba(45, 45, 31, 0) 90.32%), url('../img/cta2.png');
+    background-size: cover; /* Ensures the background image covers the container */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat;
+    width: 100%; /* Adjust as needed */
+
+    padding: 4rem 3rem;
+    color: white;
+
+}
+
+.cta2 a {
+    
+    color: white;
+    border: 1px solid white;
+    padding: 6px 20px;
+    border-radius: 5px;
+    transition: background .2s ease;
+}
+.cta2 a:hover {
+    color: #000000;
+    background-color: white;
+}
+
+.cta2 p {
+    font-size: 14px;
+}
+
+/************************************************************************************
+cta2 (Call to action 2) css ends
+**************************************************************************************/
+
+
+
+/************************************************************************************
+Blog section css starts
+**************************************************************************************/
+
+
+.blog h2 {
+    font-size: 25px;
+    font-weight: bold
+
+}
+
+
+.blog .blog-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.blog .img {
+    position: relative;
+    border-radius: 20px;
+}
+
+.blog .img img {
+    border-radius: 20px;
+}
+
+.blog .img .category {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 5px;
+    background-color: var(--dark-theme-color);
+    color: white;
+}
+
+.blog .stats {
+    display: flex;
+    width: 70%;
+    justify-content: space-between;
+    align-items: flex-start;
+    font-size: 14px;
+    color: #727272;
+    margin: 10px 0;
+}
+
+.blog .blog-title {
+    font-size: 18px;
+    font-weight: 500;
+    max-width: 100%;
+
+    /* display: none; */
+}
+
+/************************************************************************************
+Blog section css ends
+**************************************************************************************/
+
+
+
+/************************************************************************************
+FAQ section css starts
+**************************************************************************************/
+
+
+
+.faqs h2 {
+    font-size: 25px;
+    font-weight: bold
+
+}
+
+.faqs .faq-row {
+    display: flex; /* Ensure flex is applied if needed */
+    flex-wrap: wrap; /* Allow columns to wrap if they don't fit */
+    column-gap:  5rem; /* Add gap if necessary */
+}
+
+.faq-row .faq-col-1 {
+    flex:1.5
+}
+
+
+.faqs .faq-item div {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: baseline;
+    color: #2D2D1F;
+}
+
+.faq-item div i {
+    cursor: pointer;
+}
+
+
+
+.faq-item .faq-details {
+    overflow: hidden;
+    transition: height 1s ease;
+    height: 0;
+}
+
+.faq-item .faq-details.active {
+    height: auto; /* This will be overridden by JS setting a specific height */
+}
+
+
+.faqs .faq-col-2 {
+    background-image: url(../img/faq-bg.png);
+    /* background-position: fixed; */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: auto;
+
+    border-radius: 30px;
+
+}
+
+
+.faq-row .faq-col-2 {
+    flex:1
+}
+
+/************************************************************************************
+FAQ section css ENDS
+**************************************************************************************/
+
+
+
+/************************************************************************************
+Footer section css starts
+**************************************************************************************/
+
+
+.footer {
+    background-color: var(--heading-text); /* Light background color */
+    padding: 40px 0; /* Top and bottom padding */
+    color: white;
+    
+}
+
+.footer h5 {
+    font-weight: bold; /* Bold headings */
+    margin-bottom: 20px; /* Space below headings */
+}
+
+.footer a {
+    color: white; /* Link color */
+   
+}
+
+.footer a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+
+
+.soc {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
+}
+
+.soc li {
+    display: inline-block; /* Display list items in a line */
+}
+
+.soc li a {
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    width: 40px; 
+    height: 40px; 
+    border-radius: 50%; 
+    background-color: white; 
+    color: #2D2D1F; 
+    text-decoration: none; 
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+}
+
+.soc li a:hover {
+    background-color: #2D2D1F; /* Change background color on hover */
+    color: white; /* Change icon color on hover */
+    border: 1px solid white;
+}
+
+
+.subscribe {
+    display: flex;
+}
+
+.subscribe input, .subscribe button {
+    background-color: transparent;
+    border: none;
+
+    caret-color: white;
+
+}
+
+.subscribe input:focus {
+    background-color: transparent;
+    border: none;
+    box-shadow: none; /* Remove default Bootstrap box shadow */
+            outline: none; 
+            column-rule-color: white;
+}
+
+.subscribe input::placeholder {
+    color: white;
+}
+
+
+/************************************************************************************
+Footer section css ends
+**************************************************************************************/
+
+
