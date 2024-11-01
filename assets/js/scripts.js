@@ -1,4 +1,9 @@
-// Select active tab  and color it
+document.addEventListener('DOMContentLoaded', ()=> {
+
+
+
+
+    // Select active tab  and color it
 
     const buttons = document.querySelectorAll('.products button');
 
@@ -51,3 +56,4 @@ document.querySelectorAll('.faq-item').forEach(faq => {
 
     
     
+})
