@@ -24,76 +24,223 @@ email: onyeweketerence@gmail.com
     <!-- bootstrap css -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chivo+Mono:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+      <!-- aos css -->
+      <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <!-- font awesome -->
      <link rel="stylesheet" href="assets/fa-6.6.0/css/all.css">
 
-    <!-- my css -->
+    <!-- main css -->
      <link rel="stylesheet" href="assets/css/styles.css">
+     <!-- Contact css -->
+     <link rel="stylesheet" href="assets/css/contact.css">
+
+     <!-- aos css -->
+     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   </head>
   <body>
-    <header>
-        <nav>
-            <div class="logo">
-                <img src="assets/img/logo.png" alt="logo" width="200px">
+    <header class="">
+        <div class="top-navba d-flex justify-content-end pt-2">
+            <a href="tel: +1507-123-8373">+1507-123-8373</a>
+            <a href="mailto: contact@lesliefuniture.in" class="mx-5 topnav-contact">contact@lesliefuniture.in</a>
+        </div>
+        <nav class="navba lg d-flex justify-content-between align-items-center mb-5">
+            <div class="brand-logo">
+                <a href="">
+                    <img src="Assets/img/Group 205.png" alt="">
+                </a>
             </div>
-
-            <div class="menu">
-                <div class="top-bar">
-                    <a href="tel: 090-6606-3033">090-6606-3033</a>
-                    <a href="mailto:contact@lesliefurniture.com">contact@lesliefurniture.com</a>
-                </div>
-                <div class="bottom-bar">
-                    <ul>
-                        <li><a href="#">Furniture <i class="fa-solid fa-angle-down"></i></a></li>
-                        <li><a href="#">Shop</a></li>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
-                    <div class="cart">
-                        <img src="assets/img/cart-icon.png" alt="cart-icon">
-                        <span class="cart-q">0</span>
-                    </div>
-                </div>
+            <div class="navba-links">
+                <ul>
+                    <li>
+                        <div class="dropdown lg-dropdown">
+                            <button class="dropbtn">Furniture 
+                              <i class="fa-solid fa-caret-down ms-2"></i>
+                            </button>
+                            <div class="dropdown-content">
+                              <a>Chair</a>
+                              <a>Sofa</a>
+                              <a>Bed</a>
+                              <a>Lap</a>
+                            </div>
+                          </div>
+                    </li>
+                    <li><a href="">Shop</a></li>
+                    <li><a href="#aboutus">About Us</a></li>
+                    <li><a href="" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Contact</a></li>
+                </ul>
+            </div>
+            <div class="shopping-cart">
+                <a href="">
+                    <img src="Assets/img/Bag.png" alt="">
+                </a>
+                <span class="cart-q">0</span>
             </div>
         </nav>
+
+        <!-- SMALL SCREEN NAV -->
+        <nav class="navba sm d-flex justify-content-between align-items-center mb-5">
+            <div class="hamburger">
+                <label class="open-navba" onclick="openNavba()">
+                    <i class="fa fa-bars"></i>
+                </label>
+            </div>
+            <div class="navba-links" id="navba-links">
+                <label class="close-navba" onclick="closeNavba()">
+                    <i class="fa fa-remove"></i>
+                  </label>
+                <ul>
+                    <li>
+                        <div class="dropdown sm-dropdown">
+                            <button type="button" class="dropdown-button">Furniture 
+                              <i class="fa fa-caret-down ms-2"></i>
+                            </button>
+                            <div class="dropdown-container">
+                                <a href="" onclick="closeNavba()">Chair</a>
+                                <a href="" onclick="closeNavba()">Sofa</a>
+                                <a href="" onclick="closeNavba()">Bed</a>
+                                <a href="" onclick="closeNavba()">Lap</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="" onclick="closeNavba()">Shop</a></li>
+                    <li><a href="#aboutus" onclick="closeNavba()">About Us</a></li>
+                    <li><a href="" onclick="closeNavba()" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Contact</a></li>
+                </ul>
+            </div>
+            <div class="brand-logo">
+                <a href="">
+                    <img src="Assets/img/Group 205.png" alt="">
+                </a>
+            </div>
+            <div class="shopping-cart">
+                <a href="">
+                    <img src="Assets/img/Bag.png" alt="">
+                </a>
+                <span class="cart-q">0</span>
+            </div>
+        </nav>
+
+        <!-- hero section -->
+        <div class="hero d-flex justify-content-center text-center bg-cover" style="background-image: url(Assets/img/hero-img.png)">
+            <div class="hero-content-wrapper slide1 active">
+                <h1 class="animate-title">Make your interior more Minimalistic & modern</h1>
+                <p class="animate-tex">Turn your room with leslie furnitures into a lot more minimalist and modern with ease and speed</p>
+                <div><a href="" class="explore-btn animate-butto">Explore Now</a></div>
+            </div>
+            
+            <div class="hero-content-wrapper slide2" style="display: none;">
+                <h1 class="animate-title">Bring Natural Warmth into Every Corner</h1>
+                <p class="animate-tex">Elevate your space with our earthy, handcrafted pieces that blend warmth and sophistication effortlessly.</p>
+                <div><a href="" class="explore-btn animate-butto">Explore Now</a></div>
+            </div>
+            
+            <div class="hero-content-wrapper slide3" style="display: none;">
+                <h1 class="animate-title">Redefine Modern Living with Luxe Comfort</h1>
+                <p class="animate-tex">Our contemporary furniture brings elegance and ease into your home, creating spaces you’ll love to live in.</p>
+                <div><a href="" class="explore-btn animate-butto">Explore Now</a></div>
+            </div>
+            
+            
+            <style>
+                .hero-content-wrapper.active {
+                    opacity: 1;
+                }
+
+                .animate-title {
+                    animation: slideInFromTop 1s ease forwards;
+                }
+
+                .animate-text, .animate-button {
+                    animation: slideInFromBottom 1s ease forwards;
+                    animation-delay: 0.7s; /* Delay for text and button animations */
+                }
+
+                @keyframes slideInFromTop {
+                    0% {
+                        transform: translateY(-50px);
+                        opacity: 0;
+                    }
+                    100% {
+                        transform: translateY(0);
+                        opacity: 1;
+                    }
+                }
+
+                @keyframes slideInFromBottom {
+                    0% {
+                        transform: translateY(50px);
+                        opacity: 0;
+                    }
+                    100% {
+                        transform: translateY(0);
+                        opacity: 1;
+                    }
+                }
+
+            </style>
+            <div class="hero-linear"></div>
+        </div>
     </header>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+        let currentIndex = 0;
+        const slides = document.querySelectorAll(".hero-content-wrapper");
+        const totalSlides = slides.length;
 
-    <!-- hero section start -->
-    <section class="hero ">
-        <h1 class="text-center">Make your interior more minimalistic & <span>modern</span></h1>
-        <p class="text-center">Turn your room with leslie furnitures into a lot more<br>minimalist and modern with ease and speed</p>
-        <div class="explore-box mt-5">
-            <a href="#">Explore Now</a>
-        </div>
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.style.display = i === index ? "block" : "none";
+                if (i === index) {
+                    slide.classList.add("active");
+                } else {
+                    slide.classList.remove("active");
+                }
+            });
+        }
 
-        <div class="white-effect">
-            <img src="assets/img/White effect.png" alt="effect" >
-        </div>
-    </section>
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % totalSlides;
+            showSlide(currentIndex);
+        }
+
+        // Show the first slide
+        showSlide(currentIndex);
+
+        // Set interval for auto-slide
+        setInterval(nextSlide, 6000);
+    });
+
+    </script>
 
     <!-- why choose us secion -->
      
 
 
-        <section class="why-choose containerx">
+        <section class="why-choose containerx" data-aos="fade-up" data-aos-duration="1500">
             <div class="row gx-3">
                 <div class="col-sm-12 col-md-6 col-lg-3">
                     <h1>Why<br><span>Choose Us</span></h1>
                 </div>
-                <div class="col-sm-12 col-md-6 col-lg-3">
+                <div class="col-sm-12 col-md-6 col-lg-3 box">
                     <h2>Luxury facilities</h2>
                     <p>The advantage of choosing our furniture is that it offers comfortable service and comprehensive amenities.</p>
-                    <a href="#">More Info <img src="assets/img/arrow-right.png" alt="arrow"></a>
+                    <a href="#" class="more-info">More Info <i class="fa-solid fa-angle-right ms-2"></i> <img src="assets/img/arrow-right.png" alt="arrow" class="ms-2"></a>
                 </div>
-                <div class="col-sm-12 col-md-6 col-lg-3">
+                <div class="col-sm-12 col-md-6 col-lg-3 box">
                     <h2>Affordable Price</h2>
                     <p>You can access high-quality furniture at an affordable price while enjoying exclusive features that set us apart.</p>
-                    <a href="#">More Info <img src="assets/img/arrow-right.png" alt="arrow"></a>
+                    <a href="#" class="more-info">More Info <i class="fa-solid fa-angle-right ms-2"></i> <img src="assets/img/arrow-right.png" alt="arrow" class="ms-2"></a>
                 </div>
-                <div class="col-sm-12 col-md-6 col-lg-3">
+                <div class="col-sm-12 col-md-6 col-lg-3 box">
                     <h2>Fast Delivery</h2>
                     <p>We ensure quick delivery of our unique furniture pieces, so you can enjoy your selections without delay.</p>
-                    <a href="#">More Info <img src="assets/img/arrow-right.png" alt="arrow"></a>
+                    <a href="#" class="more-info">More Info <i class="fa-solid fa-angle-right ms-2"></i> <img src="assets/img/arrow-right.png" alt="arrow" class="ms-2"></a>
                 </div>
             </div>
          </section>
@@ -101,98 +248,101 @@ email: onyeweketerence@gmail.com
 
          <!-- best selling products -->
          <section class="best-selling">
-            <div>
-                <h1 class="text-center">Best Sell<span>ing Products</span></h1>
-            </div>
-            <div class="products">
-                <button class="active">Chair</button>
-                <button>Beds</button>
-                <button>Sofa</button>
-                <button>Lamp</button>
-            </div>
+            <div class="containerx" style="overflow-x: hidden;">
+                <div>
+                    <h1 class="text-center">Best Sell<span>ing Products</span></h1>
+                </div>
+                <div class="products">
+                    <button class="active">Chair</button>
+                    <button>Beds</button>
+                    <button>Sofa</button>
+                    <button>Lamp</button>
+                </div>
 
-            <div class="product-items containerx">
-                <div class="item-card">
-                    <div class="item-img">
-                        <img src="assets/img/chair3.png" alt="item">
-                    </div>
-                    <div class="item-info">
-                        <p class="item-cat">Chair</p>
-                        <p class="item-name">Sakarias Armchair</p>
-                        <p><img src="assets/img/5-star.png" alt="start"></p>
-                        <div class="price-and-icon">
-                            <p class="item-price"><sup>$</sup>12.34</p>
-                            <div class="plus-icon">
-                                <i class="fa-solid fa-plus"></i>
+                <div class="product-items owl-carousel owl-theme">
+                    <div class="item-card">
+                        <div class="item-img">
+                            <img src="assets/img/chair3.png" alt="item" >
+                        </div>
+                        <div class="item-info">
+                            <p class="item-cat">Chair</p>
+                            <p class="item-name">Sakarias Armchair</p>
+                            <p><img src="assets/img/5-star.png" alt="start"></p>
+                            <div class="price-and-icon">
+                                <p class="item-price"><sup>$</sup>12.34</p>
+                                <div class="plus-icon">
+                                    <i class="fa-solid fa-plus"></i>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="item-card">
-                    <div class="item-img">
-                        <img src="assets/img/chair3.png" alt="item">
-                    </div>
-                    <div class="item-info">
-                        <p class="item-cat">Chair</p>
-                        <p class="item-name">Baltsar Chair</p>
-                        <p><img src="assets/img/5-star.png" alt="start"></p>
-                        <div class="price-and-icon">
-                            <p class="item-price"><sup>$</sup>12.34</p>
-                            <div class="plus-icon">
-                                <i class="fa-solid fa-plus"></i>
+                    <div class="item-card">
+                        <div class="item-img">
+                            <img src="assets/img/chair3.png" alt="item">
+                        </div>
+                        <div class="item-info">
+                            <p class="item-cat">Chair</p>
+                            <p class="item-name">Baltsar Chair</p>
+                            <p><img src="assets/img/5-star.png" alt="start"></p>
+                            <div class="price-and-icon">
+                                <p class="item-price"><sup>$</sup>12.34</p>
+                                <div class="plus-icon">
+                                    <i class="fa-solid fa-plus"></i>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="item-card">
-                    <div class="item-img">
-                        <img src="assets/img/chair3.png" alt="item">
-                    </div>
-                    <div class="item-info">
-                        <p class="item-cat">Chair</p>
-                        <p class="item-name">Anjay Chair</p>
-                        <p><img src="assets/img/4-star.png" alt="star"></p>
-                        <div class="price-and-icon">
-                            <p class="item-price"><sup>$</sup>22.14</p>
-                            <div class="plus-icon">
-                                <i class="fa-solid fa-plus"></i>
+                    <div class="item-card">
+                        <div class="item-img">
+                            <img src="assets/img/chair3.png" alt="item">
+                        </div>
+                        <div class="item-info">
+                            <p class="item-cat">Chair</p>
+                            <p class="item-name">Anjay Chair</p>
+                            <p><img src="assets/img/4-star.png" alt="star"></p>
+                            <div class="price-and-icon">
+                                <p class="item-price"><sup>$</sup>22.14</p>
+                                <div class="plus-icon">
+                                    <i class="fa-solid fa-plus"></i>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="item-card">
-                    <div class="item-img">
-                        <img src="assets/img/chair3.png" alt="item">
-                    </div>
-                    <div class="item-info">
-                        <p class="item-cat">Chair</p>
-                        <p class="item-name">Nyantuy Chair</p>
-                        <p><img src="assets/img/5-star.png" alt="start"></p>
-                        <div class="price-and-icon">
-                            <p class="item-price"><sup>$</sup>17.02</p>
-                            <div class="plus-icon">
-                                <i class="fa-solid fa-plus"></i>
+                    <div class="item-card">
+                        <div class="item-img">
+                            <img src="assets/img/chair3.png" alt="item">
+                        </div>
+                        <div class="item-info">
+                            <p class="item-cat">Chair</p>
+                            <p class="item-name">Nyantuy Chair</p>
+                            <p><img src="assets/img/5-star.png" alt="start"></p>
+                            <div class="price-and-icon">
+                                <p class="item-price"><sup>$</sup>17.02</p>
+                                <div class="plus-icon">
+                                    <i class="fa-solid fa-plus"></i>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    
                 </div>
-                
-            </div>
 
-            <div class="view-all">
-                <a href="#">View All <img src="assets/img/arrow-right.png" alt="arrow"></a>
+                <div class="view-all">
+                    <a href="#">View All <img src="assets/img/arrow-right.png" alt="arrow"></a>
+                </div>
             </div>
          </section>
 
 
          <!-- who we are -->
-         <section class="we-are containerx my-5 pt-5">
+         <section class="we-are containerx my-5 pt-5" id="aboutus">
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-lg-6" data-aos="fade-right" data-aos-offset="300"       data-aos-easing="ease-in-sine">
                     <img src="assets/img/double1.png" alt="1" width="45%" height="100%">
                     <img src="assets/img/double2.png" alt="2" width="45%" height="100%">
                 </div>
-                <div class="col-md-6">
+                <div class="col-lg-6" data-aos="fade-left" data-aos-offset="300"
+                data-aos-easing="ease-in-sine">
                     <p>WHO WE ARE?</p>
                     <h2>Leslie Furnitures</h2>
                     <p>We were founded in January 1996 in New York, specializing in furniture for both homes and commercial spaces. Our mission was to promote the art of comfortable living, helping people express their personal style through thoughtfully designed furniture. After years of hard work and dedication, we have established ourselves as a trusted name in the industry</p>
@@ -241,7 +391,7 @@ email: onyeweketerence@gmail.com
          <section class="containerx my-5 pt-4">
             <p class="mb-0">TESTIMONIAL</p>
             <H2 class="mb-3">What People Say</H2>
-            <div class="owl-carousel owl-theme">
+            <div class="owl-carousel owl-theme testimonial-box">
                 <div class="item">
                     <img src="assets/img/quote.png" alt="quote">
                     <p>Very good place to buy furniture well educated staff with high effectiveness and cooperative  attitude good brand products under one roof. Love to visit again in future and recommend  to 
@@ -259,15 +409,26 @@ email: onyeweketerence@gmail.com
                 
                 <div class="item">
                     <img src="assets/img/quote.png" alt="quote">
-                    <p>Very good place to buy furniture well educated staff with high effectiveness and cooperative  attitude good brand products under one roof. Love to visit again in future and recommend  to 
-                        my all friends and relatives 
-                        to visit at once.
+                    <p>Just think any design and You will defiantly find your desired stuff here. Don't believe my words go and check yourself. <br><br> Just think any design and You will defiantly find your desired stuff here.
                     </p>
                     <div class="testi-owner">
-                        <img src="assets/img/testimonial1.png" alt="image1">
+                        <img src="assets/img/testimonial2.png" alt="image1">
                         <div>
-                            <p class="user-name">Rice Moore</p>
-                            <p class="user-title">Restaurant Owner</p>
+                            <p class="user-name">Jeff Paul Smith</p>
+                            <p class="user-title">Freelancer</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <img src="assets/img/quote.png" alt="quote">
+                    <p>Absolutely thrilled with the furniture selection pieces at such attractive prices! <br><br> The quality and variety make it easy to find the perfect fit for any space,  bringing both style and comfort into our home..
+                    </p>
+                    <div class="testi-owner">
+                        <img src="assets/img/testimonial3.png" alt="image1">
+                        <div>
+                            <p class="user-name">Mayer Monroe</p>
+                            <p class="user-title">Businessman</p>
                         </div>
                     </div>
                 </div>
@@ -289,30 +450,13 @@ email: onyeweketerence@gmail.com
 
                 <div class="item">
                     <img src="assets/img/quote.png" alt="quote">
-                    <p>Very good place to buy furniture well educated staff with high effectiveness and cooperative  attitude good brand products under one roof. Love to visit again in future and recommend  to 
-                        my all friends and relatives 
-                        to visit at once.
+                    <p>Just think any design and You will defiantly find your desired stuff here. Don't believe my words go and check yourself. <br><br> Just think any design and You will defiantly find your desired stuff here.
                     </p>
                     <div class="testi-owner">
-                        <img src="assets/img/testimonial1.png" alt="image1">
+                        <img src="assets/img/testimonial2.png" alt="image1">
                         <div>
-                            <p class="user-name">Rice Moore</p>
-                            <p class="user-title">Restaurant Owner</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="item">
-                    <img src="assets/img/quote.png" alt="quote">
-                    <p>Very good place to buy furniture well educated staff with high effectiveness and cooperative  attitude good brand products under one roof. Love to visit again in future and recommend  to 
-                        my all friends and relatives 
-                        to visit at once.
-                    </p>
-                    <div class="testi-owner">
-                        <img src="assets/img/testimonial1.png" alt="image1">
-                        <div>
-                            <p class="user-name">Rice Moore</p>
-                            <p class="user-title">Restaurant Owner</p>
+                            <p class="user-name">Jeff Paul Smith</p>
+                            <p class="user-title">Freelancer</p>
                         </div>
                     </div>
                 </div>
@@ -336,15 +480,15 @@ email: onyeweketerence@gmail.com
          <section class="blog containerx my-5 pt-5">
             <p>Blog</p>
             <h2 class="mb-4">The Journey Of A Thousand Miles <br>Begins With One Step</h2>
-            <div class="blog-row">
+            <div class="blog-row owl-carousel owl-carousel2 owl-theme">
                 <div class="blog-item">
-                    <div class="img">
+                    <div class="imgs">
                         <img src="assets/img/blog-img1.png" alt="blog img1">
                         <div class="category">Furniture</div>
                     </div>
                     <div class="stats">
                         <div class="date">May 20, 2024</div>
-                        <div class="dot"><img src="assets/img/dot.png" alt=""> <img src="assets/img/dot.png" alt=""></div>
+                        <div class="dots"><img src="assets/img/dot.png" alt="" class="me-1"> <img src="assets/img/dot.png" alt=""></div>
                         <div class="by">Admin</div>
                     </div>
                     <p class="blog-title">
@@ -353,32 +497,32 @@ email: onyeweketerence@gmail.com
                 </div>
 
                 <div class="blog-item">
-                    <div class="img">
+                    <div class="imgs">
                         <img src="assets/img/blog-img2.png" alt="blog img1">
                         <div class="category">Furniture</div>
                     </div>
                     <div class="stats">
                         <div class="date">May 20, 2024</div>
-                        <div class="dot"><img src="assets/img/dot.png" alt=""> <img src="assets/img/dot.png" alt=""></div>
+                        <div class="dots"><img src="assets/img/dot.png" alt="" class="me-1"> <img src="assets/img/dot.png" alt=""></div>
                         <div class="by">Admin</div>
                     </div>
                     <p class="blog-title">
-                        Luxury Residences Designed By Best Furniture Designers In The World
+                        Furniture Designers in NY – 6 Best Residential Projects
                     </p>
                 </div>
 
                 <div class="blog-item">
-                    <div class="img">
+                    <div class="imgs">
                         <img src="assets/img/blog-img3.png" alt="blog img1">
                         <div class="category">Furniture</div>
                     </div>
                     <div class="stats">
                         <div class="date">May 20, 2024</div>
-                        <div class="dot"><img src="assets/img/dot.png" alt=""> <img src="assets/img/dot.png" alt=""></div>
+                        <div class="dots"><img src="assets/img/dot.png" alt="" class="me-1"> <img src="assets/img/dot.png" alt=""></div>
                         <div class="by">Admin</div>
                     </div>
                     <p class="blog-title">
-                        Luxury Residences Designed By Best Furniture Designers In The World
+                        7 Genius Ways To Boost Business Performance With...
                     </p>
                 </div>
             </div>
@@ -386,11 +530,12 @@ email: onyeweketerence@gmail.com
 
 
          <!-- frequently asked questions -->
-          <section class="faqs my-5 pt-4 containerx">
+          <section class="faqs my-5 pt-4 containerx" id="faq">
             <div class="faq-row g-4">
-                <div class="faq-col-1">
+                <div class="faq-col-1" data-aos="fade-right" data-aos-offset="300"
+                data-aos-easing="ease-in-sine">
                     <p>Frequently Asked Questions</p>
-                    <h2>Furniture DesignInG<br>Consultancy</h2>
+                    <h2>Furniture Designing<br>Consultancy</h2>
                     <br>
                     <div class="faq-item">
                         <div class="faq-title">
@@ -415,7 +560,7 @@ email: onyeweketerence@gmail.com
                             <p>What types of furniture do you offer?</p>
                             <i class="fa-solid fa-plus"></i>
                         </div>
-                        <p class="faq-details">We use high-quality materials including sustainable wood, metal, and textiles to ensure durability and style.</p>
+                        <p class="faq-details">We offer a wide range of furniture, including living room, bedroom, dining, and office furniture. Our collection includes various styles to match different tastes, from classic to contemporary designs</p>
                         <hr>
                     </div>
 
@@ -424,19 +569,20 @@ email: onyeweketerence@gmail.com
                             <p>How long does it take to receive an order?</p>
                             <i class="fa-solid fa-plus"></i>
                         </div>
-                        <p class="faq-details">We use high-quality materials including sustainable wood, metal, and textiles to ensure durability and style.</p>
+                        <p class="faq-details">Delivery times depend on the item and location, but we aim to get your order to you as quickly as possible. For custom pieces, the timeline will vary based on design and production, and we’ll keep you updated throughout the process.</p>
                         <hr>
                     </div>
 
                     <div class="faq-item">
                         <div class="faq-title">
-                            <p>How long does it take to receive an order?</p>
+                            <p>Can I track my order?</p>
                             <i class="fa-solid fa-plus"></i>
                         </div>
-                        <p class="faq-details">We use high-quality materials including sustainable wood, metal, and textiles to ensure durability and style.</p>
+                        <p class="faq-details">Yes, absolutely! Once your order ships, we’ll send you a tracking link, so you can follow every step until it arrives at your door.</p>
                     </div>
                 </div>
-                <div class="faq-col-2 faq-bg">
+                <div class="faq-col-2 faq-bg" data-aos="fade-left" data-aos-offset="300"
+                data-aos-easing="ease-in-sine">
                     <!-- css will insert bg image -->
                 </div>
             </div>
@@ -446,14 +592,14 @@ email: onyeweketerence@gmail.com
         <!-- footer section starts here -->
 
         <footer class="footer mt-5">
-            <div class="container">
+            <div class="container mb-5">
                 <div class="row">
                     <!-- Column 1: Quick Links -->
 
                     <div class="col-md-3">
                         <img src="assets/img/logo-white.png" alt="logo" width="50%">
                         <p class="mt-3">With our 10,000 sq. ft. fabrication unit, we craft furniture with exceptional design and finish, ensuring top-quality in every detail.</p>
-                        <p>+ 507-123-8373</p>
+                        <p><a href="tel: + 507-123-8373">+ 507-123-8373</a></p>
                         <p><a href="mailto:Contact@Lesliefurniture.in">Contact@Lesliefurniture.in</a></p>
                         
                     </div>
@@ -466,10 +612,10 @@ email: onyeweketerence@gmail.com
                     <div class="col-md-3">
                         <h5>Quick Links</h5>
                         <ul class="list-unstyled">
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">Contact Us</a></li>
-                            <li><a href="#">FAQs</a></li>
+                            <li><a href="/">Home</a></li>
+                            <li><a href="#aboutus">About Us</a></li>
+                            <li><a href="" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Contact</a></li>
+                            <li><a href="#faq">FAQs</a></li>
                         </ul>
                     </div>
 
@@ -478,15 +624,15 @@ email: onyeweketerence@gmail.com
                     <!-- Column 3: Subscribe -->
 
                     <!-- Column 2: Social -->
-<div class="col-md-3">
-    <h5>Social</h5>
-    <ul class="soc">
-        <li><a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
-        <li><a href="#" title="Twitter"><i class="fab fa-twitter"></i></a></li>
-        <li><a href="#" title="Instagram"><i class="fab fa-instagram"></i></a></li>
-        
-    </ul>
-</div>
+                    <div class="col-md-3">
+                        <h5>Social</h5>
+                        <ul class="soc">
+                            <li><a href="https://facebook.com" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="https://twitter.com" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="https://instagram.com" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a></li>
+                            
+                        </ul>
+                    </div>
 
 
 
@@ -506,7 +652,131 @@ email: onyeweketerence@gmail.com
 
                 </div>
             </div>
+            <hr class="">
+            <div class="copyright">
+                <p class="text-center">&copy;Copyright Leslie Furniture 2024. All Rights Reserved</p>
+            </div>
         </footer>
+
+
+        <!-- MODAL FOR CONTACT US SECTION -->
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <!-- <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1> -->
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+            
+                    <!-- Contact Section -->
+                    <section id="contact" class="contact section" style="overflow-x: hidden;">
+
+                        <!-- Section Title -->
+                        <div class="container section-title" data-aos="fade-up">
+                        <h2>Contact Us</h2>
+                        <p class="para text-center" style="width: 90%; margin: auto">We’re here to assist you. Send a message now.</p><br>
+                        </div><!-- End Section Title -->
+
+                        <div class="container" data-aos="fade-up" data-aos-delay="100">
+                            <style>
+                                .contact-row {
+                                    display: flex;
+                                    flex-direction: column;
+                                }
+
+                            </style>
+                        <div class="contact-row" >
+
+                            <div class="contact-1 order-2">
+
+                            <div class="info-wrap">
+
+                                <!-- ADDRESS COMMENTED OUT -->
+
+                                <!-- <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
+                                    <i class="fa fa-map-marker-alt" aria-hidden="true"></i>
+                                <div>
+                                    <h3>Address</h3>
+                                    <p>Maryland Nekede, Old Nekede Rd Umualum, Imo State</p>
+                                </div>
+                                </div> -->
+
+                                
+
+                                <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300" onclick="window.open('tel: +1 507-123-8373', '_blank')" style="cursor: pointer;">
+                                    <i class="fa fa-phone" aria-hidden="true"></i>
+
+                                <div>
+                                    <h3>Call Us</h3>
+                                    <p onclick="">+ 507-123-8373</p>
+                                </div>
+                                </div><!-- End Info Item -->
+
+                                <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400" onclick="window.open('mailto:contact@lesliefuniture.in', '_blank')" style="cursor: pointer;">
+                                    <i class="fa fa-envelope" aria-hidden="true"></i>
+
+                                <div>
+                                    <h3>Email Us</h3>
+                                    <p>contact@Lesliefurniture.in</p>
+                                </div>
+                                </div><!-- End Info Item -->
+
+                                
+                            </div>
+                            </div>
+
+                            <div class="contact-2">
+                                <div class="my-email-form" data-aos="fade-up" data-aos-delay="200">
+                                    <div >
+                                        <form action="" method="post" class="row gy-4" id="inquiry-form">
+                                            <div class="col-md-6">
+                                                <label for="name-field" class="pb-2">Your Name</label>
+                                                <input type="text" name="name" id="name-field" class="form-control" required="">
+                                            </div>
+                                    
+                                            <div class="col-md-6">
+                                                <label for="email-field" class="pb-2">Your Email</label>
+                                                <input type="email" class="form-control" name="email" id="email-field" required="">
+                                            </div>
+                                    
+                                            <div class="col-md-12">
+                                                <label for="subject-field" class="pb-2">Subject</label>
+                                                <input type="text" class="form-control" name="subject" id="subject-field" required="">
+                                            </div>
+                                    
+                                            <div class="col-md-12">
+                                                <label for="message-field" class="pb-2">Message</label>
+                                                <textarea class="form-control" name="message" rows="10" id="message-field" required=""></textarea>
+                                            </div>
+                                    
+                                            <div class="col-md-12 text-center">
+                                                <button type="submit"><i class="fa-solid  fa-spin"></i> Send Message </button>
+                                            </div>
+                                        </form>
+                                        
+                                
+                                    </div>
+                                </div>
+                                
+                                
+                            </div><!-- End Contact Form -->
+
+                        </div>
+
+                        </div>
+
+                    </section><!-- End Contact Section -->
+
+    
+
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" style="background-color: var(--text-color1);" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+            </div>
+        </div>
         
 
 <!-- Include jQuery (required for Owl Carousel) -->
@@ -516,36 +786,101 @@ email: onyeweketerence@gmail.com
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 
          <script>
+            // for best selling products
+            $('.product-items').owlCarousel({
+                loop:true,
+                margin:60,
+                autoplay: true,
+                autoplayTimeout: 4000,
+                autoplayHoverPause:true,
+                dots:false,
+                nav:true,
+                navText: [
+                    '<img src="assets/img/arrow-left-short.png" alt="arrow">', // Custom icon for the "prev" button
+                    '<img src="assets/img/arrow-right-short.png" alt="arrow">' // Custom icon for the "next" button
+                ],
+                responsive:{
+                    0:{
+                        items:1
+                    },
+                    700:{
+                        items:2
+                    },
+                    1000:{
+                        items:3
+                    }
+                }
+            })
+
+            // testimonial
             $('.owl-carousel').owlCarousel({
-    loop:true,
-    margin:60,
-    dots:false,
-    nav:true,
-    navText: [
-        '<img src="assets/img/arrow-left.png" alt="arrow">', // Custom icon for the "prev" button
-        '<img src="assets/img/arrow-right.png" alt="arrow">' // Custom icon for the "next" button
-    ],
-    responsive:{
-        0:{
-            items:1
-        },
-        700:{
-            items:2
-        },
-        1000:{
-            items:3
-        }
-    }
-})
+                loop:true,
+                margin:60,
+                dots:true,
+                nav:false,
+                // navText: [
+                //     '<img src="assets/img/arrow-left.png" alt="arrow">', // Custom icon for the "prev" button
+                //     '<img src="assets/img/arrow-right.png" alt="arrow">' // Custom icon for the "next" button
+                // ],
+                responsive:{
+                    0:{
+                        items:1
+                    },
+                    700:{
+                        items:2
+                    },
+                    1000:{
+                        items:3
+                    }
+                }
+            })
+
+            //Blog Slider
+            $('.owl-carousel2').owlCarousel({
+                loop:true,
+                margin:60,
+                dots:false,
+                nav:true,
+                navText: [
+                    '<img src="assets/img/arrow-left.png" alt="arrow">', // Custom icon for the "prev" button
+                    '<img src="assets/img/arrow-right.png" alt="arrow">' // Custom icon for the "next" button
+                ],
+                responsive:{
+                    0:{
+                        items:1
+                    },
+                    700:{
+                        items:2
+                    },
+                    1000:{
+                        items:3
+                    }
+                }
+            })
+
+            
          </script>
 
 
 
-    <script src="assets/js/scripts.js"></script>
+    
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>  
+
     <!-- popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
     <!-- bootstrap js -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+
+    
+      
+         <!-- aos js -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script src="assets/js/scripts.js"></script>
+    <script>
+        AOS.init();
+    </script>
   </body>
 </html>

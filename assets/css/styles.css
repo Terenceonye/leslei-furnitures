@@ -8,18 +8,23 @@ email: onyeweketerence@gmail.com
 /************************************************************************************
 General css starts
 **************************************************************************************/
-
-@font-face {
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/* @font-face {
     font-family: 'Montserrat';
     src: url('Montserrat.ttf') format('truetype');
-}
+} */
 
 * {
-    font-family: 'Montserrat', sans-serif;
+    /* font-family: 'Montserrat', sans-serif; */
     margin: 0;
     padding: 0;
     box-sizing: border-box;  
 }
+
+html{
+    font-size: 16px !important;
+    font-family: Poppins, Segoe UI, Tahoma, sans-serif !important;
+  }
 
 a {
     text-decoration: none;
@@ -33,6 +38,10 @@ a {
     --secondary-bg: #F7F7F7;
     --item-bg: #FAFAFA;
     --dark-theme-color: #404040;
+    --text-color1: #2D2D1F;
+    --text-color2: #424242;
+    --text-color3: #1E1E1E;
+    --text-color-lite: #1E1E1E;
 }
 
 .containerx {
@@ -109,70 +118,100 @@ General Css ends
 Header css starts 
 **************************************************************************************/
 
-header {
-    background-color: var(--header-bg);
+header{    
+    background-color: #E2E1DD;
+    font-family: Poppins, Segoe UI, Tahoma, sans-serif !important;
 }
-
-nav {
-    padding: 2rem 4rem;
-    display: flex;
-    justify-content: space-between;
-    column-gap: 10%;
-    
+.top-navba a{
+    font-size: 12.34px;
+    color: var(--text-color2);
 }
-
-nav .logo {
-    max-width: 300px;
+.navba{
+    padding: 0 3rem;
 }
-
-nav .menu {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    column-gap: 10px;
+.navba.sm{
+    display: none !important;
 }
-
-nav .menu .top-bar {
-    display: flex;
-    justify-content: flex-end;
-    gap: 5%;
-    padding: 0 1rem;
-
+.navba-links{
+    margin: auto !important;
 }
-
-.top-bar a {
-    color: var(--link-color);
-    text-decoration: none;
-    font-size: 14px;
+.navba ul {
+    width: 100%;
+    padding: 0;
+    margin: 0;
 }
-
-.bottom-bar ul li a {
-    color: var(--black-text);
-    text-decoration: none;
-}
-
-.bottom-bar ul li a i{
-    color: var(--black-text);
-    margin-left: 8px;
-}
-
-nav .menu .bottom-bar {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-}
-
-nav .menu .bottom-bar ul {
-    display: flex;
-    justify-content: space-between;
-}
-
-nav .menu .bottom-bar ul li {
+.navba ul li {
     list-style-type: none;
-    margin: .7rem 1.5rem;
+    display: inline-block;
+    padding: 0 1rem;
+    font-size: 18px;
+    font-weight: 600;
 }
 
-.cart {
+  .navba .dropdown .dropdown-container {
+    display: none;
+    /* height: 10rem; */
+    /* padding-top: 1rem; */
+    padding-left: 8px;
+  }
+  .navba .dropdown .dropdown-container a{
+    display: block;
+    padding: .7rem .5rem;
+  }
+  .navba .dropdown .dropdown-container a:hover{
+    background: rgb(86, 86, 86);
+  }
+  .navba .dropdown{
+    display: inline-block;  
+    transition: 1s;
+    position: relative;
+    text-wrap: nowrap;
+  }
+  
+  .navba .dropdown .dropbtn {
+    font-size: 18px;
+    font-weight: 500; 
+    border: none;
+    outline: none;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+  }
+  .navba .dropdown-content {
+    display: none;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    position: absolute;
+  }
+  
+  .navba .dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    font-size: .9rem;
+    border-bottom: 1px solid #ccc;
+  }
+  .navba .dropdown .fa-chevron-down{
+    transition: .7s;
+  }
+  .navba .dropdown:hover .fa-chevron-down{
+    transform: rotate(180deg);
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #ddd;
+  }
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  .shopping-cart{
     position: relative;
     display: inline-block; 
 }
@@ -189,6 +228,206 @@ nav .menu .bottom-bar ul li {
     font-weight: bold; 
 }
 
+
+/* HERO */
+
+.hero{
+    height: 110vh;
+    background-image: url();
+    position: relative;
+}
+
+.bg-cover{
+    background-position: 50% 110% !important;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.hero .hero-content-wrapper{
+    width: 70%;
+    padding: 2rem 0;
+}
+
+.hero h1{
+    font-size: 73px;
+}
+.hero p{
+    font-size: 24px;
+    color: var(--text-color1);
+    opacity: 80%;
+    text-align: center;
+    padding: 0 10.57vw;
+    margin-bottom: 3rem;
+}
+
+.hero .explore-btn{
+    padding: .5rem 1rem;
+    background: #dcb90b;
+    color: var(--text-color1);
+    font-size: 18px;
+    text-align: center;
+    font-weight: 600;
+    border-radius: 6px;
+}
+
+.hero-linear{
+    width: 100%;
+    height: 153px;
+    position: absolute;
+    bottom: 0;
+    background: linear-gradient(360deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 68.28%);
+}
+@media (max-width: 1200px) {
+    .hero h1 {
+        font-size: 3rem; /* Maximum size for large screens */
+    }
+    
+    
+}
+@media (max-width: 1005px) {
+    .navba{
+        padding: 0 1.5rem;
+    }
+    
+    .hero .hero-content-wrapper{
+      padding: 6rem 0 2rem;
+    }
+}
+@media (max-width: 884px){
+    .hero{
+        height: 85vh;
+      }
+      .hero .hero-content-wrapper{
+        width: 80%;
+      }
+}
+@media (max-width: 884px) {
+    .hero .hero-content-wrapper{
+        width: 85%;
+      }
+    .navba.lg{
+        display: none !important;
+    }
+    .navba.sm{
+        display: flex !important;
+    }
+    .navba-links{
+        height: 100%; 
+        position: fixed;
+        top: 0;
+        left: -100%;
+        z-index: 10;
+        width: 100%;
+        background-color: var(--text-color2);
+        color: #E2E1DD;
+        box-shadow: -5px 0 5px rgba(0, 0, 0, 0.25);
+        transition: 0.75s ease-out;
+      }
+      .navba .navba-links ul{
+        width: 100%;
+        height: 85%;
+        display: flex;
+        flex-direction: column;
+        align-items: center !important;
+        margin-top: 8rem;
+        padding-bottom: 1rem;
+      }
+      .navba .navba-links ul li{
+        margin: 1rem 0;
+        border-bottom: 1px solid #aeacac;
+        padding-bottom: .3rem;
+      }
+      .navba .navba-links ul li a{
+        color: inherit;
+      }
+      .navba .sm-dropdown .dropdown-button{
+        background: transparent;
+        color: #fff;
+        border: none;
+        font-weight: 600;
+      }
+      .navba .dropdown .dropbtn {
+        color: #fff;
+      }
+      .navba .dropdown-content a {
+        float: none;
+        color: black;
+      }
+      .navba .dropdown-container {
+        display: none;
+        text-align: center;
+      }
+      .navba label{
+        display: block;
+      }
+      .navba .open-navba{
+        font-size: 1.2rem;
+        border: 2px solid #636262;
+        padding: .1rem .7rem;
+        border-radius: .3rem;
+        cursor: pointer;
+      }
+      .navba .close-navba i{
+        font-size: 2.5rem;
+        position: absolute;
+        top: 2%;
+        right: 4%;
+        cursor: pointer;
+      }
+      .show-navba{
+         left: 0;
+      }
+      .bg-cover{
+        background-position: top !important;
+      }
+}
+
+@media (max-width: 600px) {
+  .hero{
+    height: 85vh;
+  }
+  .navba{
+    margin-bottom: 1.5rem !important;
+}
+    .top-navba{
+      justify-content: space-between !important;
+      padding: 0 1rem;
+    } 
+    .topnav-contact{
+      margin: 0 !important;
+    }
+    .hero .hero-content-wrapper{
+        width: 90%;
+        padding: 2rem 0;
+    }
+    .hero h1 {
+        font-size: calc(2.5rem + 1vw); /* Adjusted scaling for medium screens */
+    }
+    .hero p{
+        font-size: 24px;
+        padding: 0 1rem;
+        margin-bottom: 3rem;
+        background-color: rgba(255, 255, 255, 0.4);
+        -webkit-backdrop-filter: blur(5px);
+        backdrop-filter: blur(5px);
+        border-radius: .7rem;
+    }
+    
+}
+@media (max-width: 320px) {
+    .brand-logo img{
+        width: 150px;
+    }
+    .hero h1{
+        font-size: 30px;
+    }
+    .hero p{
+        font-size: 20px;
+    }
+}
+
+
 /************************************************************************************
 Header css ends 
 **************************************************************************************/
@@ -197,79 +436,7 @@ Header css ends
 /************************************************************************************
 Hero Css starts
 **************************************************************************************/
-.hero {
-    background-image: url('../img/hero-bg.png');
-    background-position: center top -10rem;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: scroll;
-    height: 100vh;
-    padding-top: 4rem;
-    overflow-x: hidden;
 
-    position: relative;
-    padding-bottom: 10rem;
-}
-
-.hero h1 {
-    font-size: 80px;
-    font-weight: 600;
-    line-height: 104px;
-    color: var(--heading-text);
-}
-
-@media (max-width: 1200px) {
-    .hero h1 {
-        font-size: 60px;
-    }
-}
-
-@media (max-width: 768px) {
-    .hero h1 {
-        font-size: 40px;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero h1 {
-        font-size: 30px;
-    }
-}
-
-
-.hero p {
-    font-size: 2vw;
-    font-weight: 500;
-    line-height: 38.4px;
-    color: var(--heading-text);
-}
-
-.hero .explore-box {
-    text-align: center;
-}
-
-.hero .explore-box a {
-    font-size: 18px;
-    font-weight: 600;
-    line-height: 27px;
-    text-align: center;
-
-    padding: 10px 2rem;
-    background-color: #2D2D1F;
-    color: white;
-    border-radius: 6px;
-}
-
-.hero .explore-box a:hover {
-    opacity: 0.9;
-}
-
-.white-effect {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-}
 
 
 /************************************************************************************
@@ -287,6 +454,9 @@ Why choose us Css starts
     background-color: white;
 
 }
+/* .why-choose h1 span{
+    display: block;
+} */
 .why-choose h2 {
     font-size: 24px;
     font-weight: 500;
@@ -301,6 +471,7 @@ Why choose us Css starts
     font-weight: 400;
     line-height: 29.6px;
     text-align: left;
+    color: var(--text-color-lite);
 
 
 }
@@ -308,7 +479,9 @@ Why choose us Css starts
 .why-choose a {
     color: #2D2D1F;
 }
-
+.why-choose a i{
+    display: none;
+}
 .why-choose a img {
     display: inline-block; /* Allows transform to work on inline elements */
     transition: transform 0.2s ease-in-out; /* Smooth transition */
@@ -316,6 +489,33 @@ Why choose us Css starts
 
 .why-choose a:hover img {
     transform: translateX(10px); /* Moves the image to the right */
+}
+
+@media (max-width: 884px) {
+    .why-choose .box{
+        margin: 1rem 0;
+    }
+    .why-choose .more-info{
+        padding: .5rem 1rem;
+        background: transparent;
+        border: 2px solid var(--text-color1);
+        color: var(--text-color1);
+        font-size: 18px;
+        text-align: center;
+        font-weight: 600;
+        border-radius: 6px;
+        transition: .7s;
+    }
+    .why-choose .more-info:hover{
+        background: var(--text-color1);
+        color: #fff;
+    }
+    .why-choose a img{
+        display: none;
+    }
+    .why-choose a i{
+        display: inline-block;
+    }
 }
 
 
@@ -372,6 +572,15 @@ Best Selling Products Css starts
     background-color: white;
 }
 
+.owl-carousel .owl-item img {
+    width: auto;
+    
+}
+
+.product-items .owl-stage-outer {
+    overflow: visible !important; /* Override to allow overflow */
+}
+
 
 .product-items {
     display: grid;
@@ -400,7 +609,12 @@ Best Selling Products Css starts
     position: relative; 
     /* display: inline-block;  */
     /* background-color: white; */
+    
 }
+
+/* .item-img img{
+    width: 200px;
+} */
 
 .item-info {
     background-color: white;
@@ -417,7 +631,8 @@ Best Selling Products Css starts
 
 
 .item-img img {
-    margin-top: -2.5rem;
+    /* margin-top: -12.5rem; */
+    width: 100%;
 }
 
 .price-and-icon .plus-icon {
@@ -474,6 +689,50 @@ Best Selling Products Css starts
     font-weight: 600;
 }
 
+
+
+/* customizing the owl navigations */
+.product-items .owl-nav {
+    display: block !important;
+    position: relative;
+    bottom: 17rem;
+}
+
+.product-items .owl-nav .owl-prev, .owl-nav .owl-next {
+    display: inline-block;
+    position: absolute;
+    
+    
+}
+
+
+.product-items .owl-nav .owl-prev {
+    left: -2.5rem;
+}
+
+.product-items .owl-nav .owl-prev:hover {
+    background: none;
+}
+
+.product-items .owl-nav .owl-next {
+    right: -2.5rem;
+    
+}
+
+.product-items .owl-nav .owl-next:hover {
+    background: none;
+}
+
+
+
+.product-items .owl-dots {
+    display: none !important; /* Ensure dots are not displayed */
+}
+
+/* for the navText */
+
+
+
 .view-all {
     margin: auto;
     text-align: center;
@@ -503,6 +762,10 @@ who we are css starts
     display: inline-block;
 }
 
+.we-are p:first-child{
+    font-size: 15px;
+    font-weight: 500;
+}
 .we-are .works {
     display: flex;
     flex-direction: column;
@@ -512,6 +775,18 @@ who we are css starts
 .we-are .works .work-item div {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+
+.we-are .works .work-item div p.num1{
+    margin-bottom: 0 !important;
+}
+
+.we-are .works .work-item div p.work1 {
+    text-wrap: nowrap;
+    margin-right: 2rem;
 }
 
 .work-item:nth-child(1) {
@@ -531,6 +806,12 @@ who we are css starts
     height: 3px;
     background-color: #2D2D1F; 
     border: none;
+    min-width: 230px;
+}
+@media (max-width: 991px) {
+    .we-are p:first-child{
+        margin-top: 1rem;
+    }
 }
 
 /************************************************************************************
@@ -584,7 +865,7 @@ Testimonial css starts
 }
 
 
-.owl-carousel .owl-item img {  /* this changes the default */
+.testimonial-box .owl-item img {  /* this changes the default */
     width: 60px;
 }
 
@@ -667,27 +948,29 @@ Blog section css starts
 
 
 .blog .blog-row {
-    display: grid;
+    /* display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     justify-content: space-between;
-    gap: 20px;
+    gap: 20px; */
 }
 
-.blog .img {
+.blog .imgs {
     position: relative;
     border-radius: 20px;
 }
 
-.blog .img img {
+.blog .imgs img {
+    width: 300px !important;
+    height: auto;
     border-radius: 20px;
 }
 
-.blog .img .category {
+.blog .imgs .category {
     position: absolute;
     bottom: 0;
     left: 0;
-    padding: 5px;
-    background-color: var(--dark-theme-color);
+    padding: 0 20px 0 5px;
+    background-color: var(--dark-theme-color) !important;
     color: white;
 }
 
@@ -695,18 +978,39 @@ Blog section css starts
     display: flex;
     width: 70%;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
     font-size: 14px;
     color: #727272;
     margin: 10px 0;
 }
 
+.blog .stats .dots{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.blog .stats .dots img{
+    width: 7px;
+}
+
 .blog .blog-title {
     font-size: 18px;
     font-weight: 500;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2; /* Limit to 2 lines */
     max-width: 100%;
 
     /* display: none; */
+}
+
+@media(max-width: 600px){
+    .blog .imgs img {
+        width: 340px !important;
+    }
 }
 
 /************************************************************************************
@@ -770,7 +1074,6 @@ FAQ section css starts
     background-repeat: no-repeat;
     background-position: center;
     height: auto;
-
     border-radius: 30px;
 
 }
@@ -779,7 +1082,20 @@ FAQ section css starts
 .faq-row .faq-col-2 {
     flex:1
 }
-
+@media (max-width: 991px) {
+    .faqs .faq-row{
+        display: block;
+        
+    }
+    .faqs .faq-col-2 {
+        height: 552px;
+    }
+}
+@media (max-width: 991px) {
+    .faqs .faq-col-2 {
+        height: 452px;
+    }
+}
 /************************************************************************************
 FAQ section css ENDS
 **************************************************************************************/
@@ -793,7 +1109,7 @@ Footer section css starts
 
 .footer {
     background-color: var(--heading-text); /* Light background color */
-    padding: 40px 0; /* Top and bottom padding */
+    padding: 40px 0 1rem; /* Top and bottom padding */
     color: white;
     
 }
@@ -833,14 +1149,14 @@ Footer section css starts
     border-radius: 50%; 
     background-color: white; 
     color: #2D2D1F; 
-    text-decoration: none; 
+    text-decoration: none !important; 
     transition: background-color 0.3s, color 0.3s; /* Smooth transition */
 }
 
 .soc li a:hover {
     background-color: #2D2D1F; /* Change background color on hover */
     color: white; /* Change icon color on hover */
-    border: 1px solid white;
+    border: 2px solid white;
 }
 
 
@@ -868,7 +1184,11 @@ Footer section css starts
     color: white;
 }
 
-
+@media (max-width: 991px) {
+    .footer .col-md-3{
+        margin: .7rem 0;
+    }
+}
 /************************************************************************************
 Footer section css ends
 **************************************************************************************/
